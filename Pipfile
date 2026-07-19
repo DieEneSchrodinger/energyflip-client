@@ -4,7 +4,7 @@ url = "https://pypi.org/simple"
 verify_ssl = true
 
 [dev-packages]
-pytest = "6"
+pytest = "*"
 pytest-aiohttp = "*"
 pytest-asyncio = "*"
 coverage = "*"
@@ -14,8 +14,5 @@ wheel = "*"
 twine = "*"
 
 [packages]
-aiohttp = "3.7.4"
-yarl = "1.5"
-
-[requires]
-python_version = "3.8"
+aiohttp = "*"
+yarl = "*"
