@@ -1,6 +1,6 @@
 import asyncio
 
-from energyflip.energyflip import EnergyFlip
+from energyflip import EnergyFlip
 
 
 async def main(username: str, password: str):
@@ -19,12 +19,15 @@ async def main(username: str, password: str):
     await energyflip.customer_overview()
     print("Customer ID: %s" % energyflip._customer_id)
     print("Sources: %s" % energyflip._sources)
-
-    # Request all actual energy consumption rates of the sources which correspond to the configured
-    # source_types, by default equal to DEFAULT_SOURCE_TYPES in const.py.
-    actuals = await energyflip.actuals()
-    print("Actuals: %s" % actuals)
-
+    
+    """
+    Deprecated due to new version of API 
+        # Request all actual energy consumption rates of the sources which correspond to the configured
+        # source_types, by default equal to DEFAULT_SOURCE_TYPES in const.py.
+        actuals = await energyflip.actuals()
+        print("Actuals: %s" % actuals)
+    """
+    
     # current_measurements() is a utility method which combines all steps above and only returns
     # the current values for each source, omitting the historical values.
     current_measurements = await energyflip.current_measurements()
@@ -38,6 +41,6 @@ async def main(username: str, password: str):
     current_measurements = await energyflip.current_measurements()
     print("Current measurements after reauthentication: %s" % current_measurements)
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     loop = asyncio.get_event_loop()
     loop.run_until_complete(main("email@example.com", "password"))

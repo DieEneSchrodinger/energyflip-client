@@ -4,3 +4,10 @@ from .energyflip import (
     EnergyFlipConnectionException,
     EnergyFlipUnauthenticatedException
 )
+
+__all__ = [
+    "EnergyFlip",
+    "EnergyFlipException",
+    "EnergyFlipConnectionException",
+    "EnergyFlipUnauthenticatedException"
+]
