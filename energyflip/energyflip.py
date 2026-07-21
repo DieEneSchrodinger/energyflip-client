@@ -176,6 +176,7 @@ class EnergyFlip:
         try:
             if not self.is_authenticated():
                 await self.authenticate()
+            if self.get_user_id() == None:
                 await self.customer_overview()
 
             measurements = dict()
@@ -199,7 +200,7 @@ class EnergyFlip:
                         if "gasSum" in cumulative:
                             measurements[type]["this" + period.capitalize()] = cumulative["gasSum"]
                         else:
-                            measurements[type]["this" + period.capitalize()] = 0
+                            measurements[type]["this" + period.capitalize()] = {"value": 0, "cost": 0}
             
             current: dict = await self.get_actuals_summary()
             
@@ -216,7 +217,7 @@ class EnergyFlip:
                     
                     measurements[type]["measurement"] = partMeasurement
                 elif type in measurements:
-                    measurements[type]["measurement"] = "None"
+                    measurements[type]["measurement"] = None
             return measurements
         
         except EnergyFlipUnauthenticatedException as exception:
