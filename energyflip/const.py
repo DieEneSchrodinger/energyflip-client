@@ -52,7 +52,10 @@ DEFAULT_SOURCE_TYPES = [SOURCE_TYPE_ELECTRICITY,
                         SOURCE_TYPE_GAS,
                         SOURCE_TYPE_GAS_EXPECTED,
                         SOURCE_TYPE_GAS_GOAL]
-"""Default source types to fetch if none are specified. Kept for compatibility"""
+"""Default source types to fetch if none are specified. Kept for compatibility.
+
+_EXPECTED and _GOAL are no longer supported by the API, but are kept here for compatibility with older versions of the API. They will be ignored if specified.
+"""
 
 CUSTOMER_OVERVIEW_PATH = "/user/v3/customers/overview"
 """Path to request details of the customer."""

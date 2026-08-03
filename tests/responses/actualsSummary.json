@@ -1,0 +1,196 @@
+{
+    "data": {
+        "actualsSummary": {
+            "battery": {
+                "gridUsageRealtime": []
+            },
+            "boiler": {
+                "gridUsageRealtime": []
+            },
+            "electricity": {
+                "dayVolume": {
+                    "timestamp": "2025-05-01T00:00:00.000+02:00",
+                    "unit": "kWh",
+                    "value": -1.235
+                },
+                "gridUsage": {
+                    "costPerHour": 0.056924159999999994,
+                    "currencySymbol": "€",
+                    "timestamp": "2025-05-01T20:37:32.000+02:00",
+                    "unit": "W",
+                    "value": 204.0
+                },
+                "gridUsageRealtime": [
+                    {
+                        "timestamp": "2025-05-01T20:33:00.000+02:00",
+                        "unit": "W",
+                        "value": 164.0
+                    },
+                    {
+                        "timestamp": "2025-05-01T20:33:10.000+02:00",
+                        "unit": "W",
+                        "value": 165.0
+                    },
+                    {
+                        "timestamp": "2025-05-01T20:33:20.000+02:00",
+                        "unit": "W",
+                        "value": 170.0
+                    },
+                    {
+                        "timestamp": "2025-05-01T20:33:30.000+02:00",
+                        "unit": "W",
+                        "value": 164.0
+                    },
+                    {
+                        "timestamp": "2025-05-01T20:33:40.000+02:00",
+                        "unit": "W",
+                        "value": 174.0
+                    },
+                    {
+                        "timestamp": "2025-05-01T20:33:50.000+02:00",
+                        "unit": "W",
+                        "value": 166.0
+                    },
+                    {
+                        "timestamp": "2025-05-01T20:34:00.000+02:00",
+                        "unit": "W",
+                        "value": 166.0
+                    },
+                    {
+                        "timestamp": "2025-05-01T20:34:10.000+02:00",
+                        "unit": "W",
+                        "value": 166.0
+                    },
+                    {
+                        "timestamp": "2025-05-01T20:34:20.000+02:00",
+                        "unit": "W",
+                        "value": 209.0
+                    },
+                    {
+                        "timestamp": "2025-05-01T20:34:30.000+02:00",
+                        "unit": "W",
+                        "value": 168.0
+                    },
+                    {
+                        "timestamp": "2025-05-01T20:34:41.000+02:00",
+                        "unit": "W",
+                        "value": 164.0
+                    },
+                    {
+                        "timestamp": "2025-05-01T20:34:51.000+02:00",
+                        "unit": "W",
+                        "value": 165.0
+                    },
+                    {
+                        "timestamp": "2025-05-01T20:35:01.000+02:00",
+                        "unit": "W",
+                        "value": 165.0
+                    },
+                    {
+                        "timestamp": "2025-05-01T20:35:11.000+02:00",
+                        "unit": "W",
+                        "value": 164.0
+                    },
+                    {
+                        "timestamp": "2025-05-01T20:35:21.000+02:00",
+                        "unit": "W",
+                        "value": 168.0
+                    },
+                    {
+                        "timestamp": "2025-05-01T20:35:31.000+02:00",
+                        "unit": "W",
+                        "value": 161.0
+                    },
+                    {
+                        "timestamp": "2025-05-01T20:35:41.000+02:00",
+                        "unit": "W",
+                        "value": 171.0
+                    },
+                    {
+                        "timestamp": "2025-05-01T20:35:51.000+02:00",
+                        "unit": "W",
+                        "value": 162.0
+                    },
+                    {
+                        "timestamp": "2025-05-01T20:36:01.000+02:00",
+                        "unit": "W",
+                        "value": 160.0
+                    },
+                    {
+                        "timestamp": "2025-05-01T20:36:11.000+02:00",
+                        "unit": "W",
+                        "value": 163.0
+                    },
+                    {
+                        "timestamp": "2025-05-01T20:36:21.000+02:00",
+                        "unit": "W",
+                        "value": 161.0
+                    },
+                    {
+                        "timestamp": "2025-05-01T20:36:32.000+02:00",
+                        "unit": "W",
+                        "value": 162.0
+                    },
+                    {
+                        "timestamp": "2025-05-01T20:36:42.000+02:00",
+                        "unit": "W",
+                        "value": 169.0
+                    },
+                    {
+                        "timestamp": "2025-05-01T20:36:52.000+02:00",
+                        "unit": "W",
+                        "value": 161.0
+                    },
+                    {
+                        "timestamp": "2025-05-01T20:37:02.000+02:00",
+                        "unit": "W",
+                        "value": 165.0
+                    },
+                    {
+                        "timestamp": "2025-05-01T20:37:12.000+02:00",
+                        "unit": "W",
+                        "value": 162.0
+                    },
+                    {
+                        "timestamp": "2025-05-01T20:37:22.000+02:00",
+                        "unit": "W",
+                        "value": 162.0
+                    },
+                    {
+                        "timestamp": "2025-05-01T20:37:32.000+02:00",
+                        "unit": "W",
+                        "value": 204.0
+                    }
+                ],
+                "inHouseUsage": {
+                    "timestamp": "2025-05-01T20:37:32.000+02:00",
+                    "unit": "W",
+                    "value": 204.0
+                }
+            },
+            "ev": {
+                "gridUsageRealtime": []
+            },
+            "gas": {
+                "dayVolume": {
+                    "timestamp": "2025-05-01T00:00:00.000+02:00",
+                    "unit": "m³",
+                    "value": 0.042
+                },
+                "gridUsageRealtime": []
+            },
+            "heat": {},
+            "heatPump": {
+                "gridUsageRealtime": []
+            },
+            "irPanel": {
+                "gridUsageRealtime": []
+            }
+        }
+    },
+    "servers": [
+        "srv4.aurumeurope.com"
+    ],
+    "status": 0,
+    "timestamp": "2025-05-01T18:37:29.714Z"
+}

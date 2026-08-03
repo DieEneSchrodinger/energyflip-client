@@ -1,24 +1,24 @@
 import asyncio
-import aiohttp
-from yarl import URL
+import calendar
+import datetime as dt
 from collections.abc import Awaitable, Callable
 from typing import Any, TypeVar, overload
-import datetime as dt
-import calendar
-import time
+
+import aiohttp
+from yarl import URL
 
 from .const import (
-    API_HOST,
-    AUTHENTICATION_PATH,
-    DEFAULT_SOURCE_TYPES,
     ACTUALS_SUMMARY_PATH,
-    OAUTH_ACCESS_TOKEN,
-    OAUTH_SCOPE,
-    OAUTH_CLIENT_ID,
-    CUSTOMER_OVERVIEW_PATH,
-    CUMULATIVE_HISTORY_PATH,
+    API_HOST,
     AUTH_TOKEN_HEADER,
-    DEFAULT_ELECTRICITY_SOURCES
+    AUTHENTICATION_PATH,
+    CUMULATIVE_HISTORY_PATH,
+    CUSTOMER_OVERVIEW_PATH,
+    DEFAULT_ELECTRICITY_SOURCES,
+    DEFAULT_SOURCE_TYPES,
+    OAUTH_ACCESS_TOKEN,
+    OAUTH_CLIENT_ID,
+    OAUTH_SCOPE,
 )
 from .exceptions import (
     EnergyFlipConnectionException,
@@ -33,7 +33,7 @@ class EnergyFlip:
 
     _customer_id: str | None
     _auth_token: str | None
-    _sources: dict[str, str] = {}
+    _sources: dict[str, str]
 
     def __init__(
         self,
@@ -113,7 +113,7 @@ class EnergyFlip:
         self._customer_id = json["data"]["customerSummary"]["sessionIdentifiers"]["customerId"]
         
         # Keep sources for now, is currently unused
-        self._sources = dict()
+        self._sources.clear()
         for source in json["data"]["customerSummary"]["sources"]:
             self._sources[source["type"]] = source["source"]
         
@@ -136,8 +136,8 @@ class EnergyFlip:
         
         :param type: Type to request (electricity, gas, solar).
         :param time: Time period to request data for (day, week, month, year)."""
-        start : dt.datetime = dt.datetime.combine(dt.date.today(), dt.time.min).astimezone()
-        end : dt.datetime = dt.datetime.combine(dt.date.today(), dt.time.max).astimezone()
+        start : dt.datetime = dt.datetime.combine(dt.datetime.now(tz=dt.UTC).date(), dt.time.min).astimezone()
+        end : dt.datetime = dt.datetime.combine(dt.datetime.now(tz=dt.UTC).date(), dt.time.max).astimezone()
         
         if time == "week":
             start = start - dt.timedelta(days=start.weekday())
@@ -176,14 +176,14 @@ class EnergyFlip:
         try:
             if not self.is_authenticated():
                 await self.authenticate()
-            if self.get_user_id() == None:
+            if self.get_user_id() is None:
                 await self.customer_overview()
 
-            measurements = dict()
+            measurements = {}
             
             # Since all values over time are now stored in the same endpoint, we iterate over all the queries that are required to extract them
             for type in ["gas", "electricity"]:
-                measurements[type] = dict()
+                measurements[type] = {}
                 for period in ["day", "week", "month", "year"]:
                     cumulative: dict = await self.get_cumulative(type, period)
                     
@@ -193,7 +193,7 @@ class EnergyFlip:
                             # NOTE: keep compatability with previous versions - only change what we extracted from API
                             if storedMeasurement in cumulative:
                                 if measurement not in measurements:
-                                    measurements[measurement] = dict()
+                                    measurements[measurement] = {}
                                 measurements[measurement]["this" + period.capitalize()] = cumulative[storedMeasurement]
                     elif type == "gas":
                         # If the gas is not supported or there is no usage, set value to 0
@@ -207,7 +207,7 @@ class EnergyFlip:
             
             for type in ["gas"] + DEFAULT_ELECTRICITY_SOURCES:
                 if type in current and "gridUsage" in current[type]:
-                    partMeasurement = measurements[type]["measurement"] if "measurement" in measurements[type] else {}
+                    partMeasurement = measurements[type].get("measurement", {})
                     gridUsage = current[type]["gridUsage"]
                     
                     # Different fields to keep compatibility with previous versions and current HA implementation
@@ -220,9 +220,9 @@ class EnergyFlip:
                     measurements[type]["measurement"] = None
             return measurements
         
-        except EnergyFlipUnauthenticatedException as exception:
+        except EnergyFlipUnauthenticatedException:
             self.invalidate_authentication()
-            raise exception
+            raise
 
     @overload
     async def request(
@@ -253,7 +253,7 @@ class EnergyFlip:
 
         # Insert authentication
         if self._auth_token is not None:
-            headers[AUTH_TOKEN_HEADER] = "Bearer %s" % self._auth_token
+            headers[AUTH_TOKEN_HEADER] = f"Bearer {self._auth_token}"
 
         try:
             async with asyncio.timeout(self.request_timeout):
@@ -271,10 +271,9 @@ class EnergyFlip:
                             raise EnergyFlipUnauthenticatedException(
                                 await response.text()
                             )
-
-                        if not is_json:
+                        if status == 404:
                             raise EnergyFlipException(
-                                "Response is not json", await response.text()
+                                f"Path not found: {url.path}",response.start, await response.text()
                             )
 
                         if not is_json or (status // 100) in [4, 5]:
@@ -282,6 +281,11 @@ class EnergyFlip:
                                 "Response is not success",
                                 response.status,
                                 await response.text(),
+                            )
+                        
+                        if not is_json:
+                            raise EnergyFlipException(
+                                "Response is not json", await response.text()
                             )
 
                         if callback is not None:

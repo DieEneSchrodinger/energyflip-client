@@ -1,0 +1,32 @@
+{
+    "data": {
+        "cumulativeHistory": {
+            "aggregations": {
+                "endTime": "2026-01-01T00:00:00.000+01:00",
+                "gasSum": {
+                    "cost": 1026.06858828,
+                    "currencySymbol": "€",
+                    "unit": "m³",
+                    "value": 744.726
+                },
+                "startTime": "2025-01-01T00:00:00.000+01:00"
+            },
+            "values": [
+                {
+                    "gas": {
+                        "cost": 1026.06858828,
+                        "currencySymbol": "€",
+                        "unit": "m³",
+                        "value": 744.726
+                    },
+                    "timestamp": "2025-01-01T00:00:00.000+01:00"
+                }
+            ]
+        }
+    },
+    "servers": [
+        "srv4.aurumeurope.com"
+    ],
+    "status": 0,
+    "timestamp": "2026-07-23T13:20:31.487Z"
+}
