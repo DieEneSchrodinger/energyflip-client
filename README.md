@@ -23,6 +23,10 @@ This project uses [pipenv](https://pypi.org/project/pipenv/) for dependency and 
 Install dependencies using
 
     pipenv install --dev
+
+### TODO
+
+Replace use of cumulativeHistory with cumulativeHistoryAggregations, since only the Aggregations part is used
     
 ## Testing
 

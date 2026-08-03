@@ -81,6 +81,29 @@ class EnergyFlipTestCase(AioHTTPTestCase):
                     content_type="application/json",
                     text=await file.read()
                 )
+
+        @routes.get("/user/v4/customers/{user}/measurements/cumulativeHistoryAggregations")
+        async def cumulativeHistoryAggregation(request: Request):
+            assert request.match_info.get("user") == "12345678-abcd-abcd-abcd-1234567890ab"
+            assert "timeResolution" in request.query
+            assert "views" in request.query
+            assert "startTime" in request.query
+            assert "endTime" in request.query
+            assert request.headers["Authorization"] == "Bearer acc35500-abcd-abcd-abcd-1234567890ab"
+
+            res = request.query["timeResolution"][:-1] # remove the last character, which is always "1"
+            views = request.query["views"]
+            #TODO: Combine the different views into one response, instead of returning the response for the first view
+            for view in views.split(","):
+                path = f"tests/responses/cumulativeHistory/{view}/{res}.json"
+                if os.path.exists(path):
+                  break
+            else:
+                return web.Response(status=404)
+            async with await anyio.open_file(path) as file:
+                content = json.loads(await file.read())
+                return web.json_response(content)
+            
         app = web.Application()
 
         app.add_routes(routes)
