@@ -20,5 +20,5 @@ setuptools.setup(
         "Programming Language :: Python :: 3",
         "Topic :: Home Automation"
     ],
-    python_requires='>=3.6'
+    python_requires='>=3.12'
 )
