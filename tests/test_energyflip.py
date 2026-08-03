@@ -1,11 +1,5 @@
-import calendar
-import datetime as dt
 import json
 import os
-import typing
-from collections.abc import Iterator
-from pathlib import Path
-from typing import Any, NotRequired, TypedDict, overload
 
 import anyio
 from aiohttp import web
@@ -32,10 +26,10 @@ class EnergyFlipTestCase(AioHTTPTestCase):
             assert data["grant_type"] == "password"
             assert data["client_id"] == "b58efc0b"
             assert data["scope"] == "role:enduser realm:aurum"
-            with open("tests/responses/authentication.json") as file:
+            async with await anyio.open_file("tests/responses/authentication.json") as file:
                 return web.Response(
                     content_type="application/json",
-                    text=file.read()
+                    text=await file.read()
                 )
         @routes.get("/user/v3/customers/overview")
         async def customer_overview(request: Request):

@@ -10,15 +10,15 @@ async def main(username: str, password: str):
     # Authenticate the client by attempting to login
     # On success, the user id and authentication are set on the client
     await energyflip.authenticate()
-    print("Auth token: %s" % energyflip._auth_token)
+    print(f"Auth token: {energyflip._auth_token}")
 
     # In order to fetch the current energy consumption,
     # we first need to know the id of the customer and
     # the sources we can request the current energy consumption of.
     # Both the customer id and sources are stored inside the client.
     await energyflip.customer_overview()
-    print("Customer ID: %s" % energyflip._customer_id)
-    print("Sources: %s" % energyflip._sources)
+    print(f"Customer ID: {energyflip._customer_id}")
+    print(f"Sources: {energyflip._sources}")
     
     """
     Deprecated due to new version of API 
@@ -31,7 +31,7 @@ async def main(username: str, password: str):
     # current_measurements() is a utility method which combines all steps above and only returns
     # the current values for each source, omitting the historical values.
     current_measurements = await energyflip.current_measurements()
-    print("Current measurements: %s" % current_measurements)
+    print(f"Current measurements: {current_measurements}")
 
     # Manually logout the client.
     energyflip.invalidate_authentication()
@@ -39,7 +39,7 @@ async def main(username: str, password: str):
     # When authenticated (or when authentication is invalid),
     # current_measurements() will automatically try to reauthenticate.
     current_measurements = await energyflip.current_measurements()
-    print("Current measurements after reauthentication: %s" % current_measurements)
+    print(f"Current measurements after reauthentication: {current_measurements}")
 
 if __name__ == "__main__":
     loop = asyncio.get_event_loop()
