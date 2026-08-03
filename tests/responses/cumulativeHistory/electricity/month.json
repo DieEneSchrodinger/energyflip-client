@@ -1,0 +1,173 @@
+{
+    "data": {
+        "cumulativeHistory": {
+            "aggregations": {
+                "electricityInHighSum": {
+                    "cost": 33.11283968,
+                    "currencySymbol": "€",
+                    "unit": "kWh",
+                    "value": 118.667
+                },
+                "electricityInHouseSum": {
+                    "cost": -34.60347364,
+                    "currencySymbol": "€",
+                    "unit": "kWh",
+                    "value": -124.00399999999998
+                },
+                "electricityInLowSum": {
+                    "cost": 39.000573,
+                    "currencySymbol": "€",
+                    "unit": "kWh",
+                    "value": 139.787
+                },
+                "electricityInSum": {
+                    "cost": 72.11341268000001,
+                    "currencySymbol": "€",
+                    "unit": "kWh",
+                    "value": 258.454
+                },
+                "electricityNetInSum": {
+                    "cost": 0.0,
+                    "currencySymbol": "€",
+                    "unit": "kWh",
+                    "value": 0.0
+                },
+                "electricityNetOutSum": {
+                    "cost": 34.60347364,
+                    "currencySymbol": "€",
+                    "unit": "kWh",
+                    "value": 124.00399999999998
+                },
+                "electricityOutHighSum": {
+                    "cost": 77.46373632,
+                    "currencySymbol": "€",
+                    "unit": "kWh",
+                    "value": 277.608
+                },
+                "electricityOutLowSum": {
+                    "cost": 29.25315,
+                    "currencySymbol": "€",
+                    "unit": "kWh",
+                    "value": 104.85
+                },
+                "electricityOutSum": {
+                    "cost": 106.71688632,
+                    "currencySymbol": "€",
+                    "unit": "kWh",
+                    "value": 382.458
+                },
+                "electricitySum": {
+                    "cost": -34.60347364,
+                    "currencySymbol": "€",
+                    "unit": "kWh",
+                    "value": -124.00399999999998
+                },
+                "endTime": "2025-07-01T00:00:00.000+02:00",
+                "solarInHouseSum": {
+                    "cost": -106.71688632,
+                    "currencySymbol": "€",
+                    "unit": "kWh",
+                    "value": -382.458
+                },
+                "startTime": "2025-05-01T00:00:00.000+02:00"
+            },
+            "values": [
+                {
+                    "electricityIn": {
+                        "cost": 38.62967933,
+                        "currencySymbol": "€",
+                        "unit": "kWh",
+                        "value": 138.44815
+                    },
+                    "electricityInHigh": {
+                        "cost": 18.45486848,
+                        "currencySymbol": "€",
+                        "unit": "kWh",
+                        "value": 66.137
+                    },
+                    "electricityInLow": {
+                        "cost": 20.174810850000004,
+                        "currencySymbol": "€",
+                        "unit": "kWh",
+                        "value": 72.31115000000001
+                    },
+                    "electricityNet": {
+                        "cost": -18.333928829999998,
+                        "currencySymbol": "€",
+                        "unit": "kWh",
+                        "value": -65.70084999999999
+                    },
+                    "electricityOut": {
+                        "cost": 56.96360816,
+                        "currencySymbol": "€",
+                        "unit": "kWh",
+                        "value": 204.149
+                    },
+                    "electricityOutHigh": {
+                        "cost": 42.11522816,
+                        "currencySymbol": "€",
+                        "unit": "kWh",
+                        "value": 150.929
+                    },
+                    "electricityOutLow": {
+                        "cost": 14.84838,
+                        "currencySymbol": "€",
+                        "unit": "kWh",
+                        "value": 53.22
+                    },
+                    "timestamp": "2025-05-01T00:00:00.000+02:00"
+                },
+                {
+                    "electricityIn": {
+                        "cost": 33.48373335,
+                        "currencySymbol": "€",
+                        "unit": "kWh",
+                        "value": 120.00585000000001
+                    },
+                    "electricityInHigh": {
+                        "cost": 14.6579712,
+                        "currencySymbol": "€",
+                        "unit": "kWh",
+                        "value": 52.53
+                    },
+                    "electricityInLow": {
+                        "cost": 18.825762150000003,
+                        "currencySymbol": "€",
+                        "unit": "kWh",
+                        "value": 67.47585000000001
+                    },
+                    "electricityNet": {
+                        "cost": -16.269544809999996,
+                        "currencySymbol": "€",
+                        "unit": "kWh",
+                        "value": -58.30314999999999
+                    },
+                    "electricityOut": {
+                        "cost": 49.75327816,
+                        "currencySymbol": "€",
+                        "unit": "kWh",
+                        "value": 178.309
+                    },
+                    "electricityOutHigh": {
+                        "cost": 35.34850816,
+                        "currencySymbol": "€",
+                        "unit": "kWh",
+                        "value": 126.679
+                    },
+                    "electricityOutLow": {
+                        "cost": 14.40477,
+                        "currencySymbol": "€",
+                        "unit": "kWh",
+                        "value": 51.63
+                    },
+                    "timestamp": "2025-06-01T00:00:00.000+02:00"
+                }
+            ]
+        }
+    },
+    "servers": [
+        "srv4.aurumeurope.com"
+    ],
+    "status": 0,
+    "timestamp": "2026-07-23T13:22:00.290Z"
+}
