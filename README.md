@@ -4,7 +4,7 @@ Client to communicate with the API behind [EnergyFlip](https://www.energyflip.co
 
 EnergyFlip is an app and measuring device to monitor the usage of electricity and gas in real time.
 
-[![Build status](httphttps://github.com/DieEneSchrodinger/energyflip-client/actions/workflows/build.yml/badge.svg)](https://github.com/DieEneSchrodinger/energyflip-client/actions)
+[![Build status](https://github.com/DieEneSchrodinger/energyflip-client/actions/workflows/build.yml/badge.svg)](https://github.com/DieEneSchrodinger/energyflip-client/actions)
 [![Coverage Status](https://coveralls.io/repos/github/DieEneSchrodinger/energyflip-client/badge.svg?branch=master)](https://coveralls.io/github/DieEneSchrodinger/energyflip-client?branch=master)
 [![PyPI version](https://badge.fury.io/py/energyflip-api-client.svg)](https://pypi.org/project/energyflip-api-client/)
 
