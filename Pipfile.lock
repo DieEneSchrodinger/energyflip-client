@@ -1,7 +1,7 @@
 {
     "_meta": {
         "hash": {
-            "sha256": "d58e499170f5ead6ee3ce4a9337ba40c5bb0542ee491e18dfb80219b8723c14c"
+            "sha256": "83115696f53b2af65a78d6671a6d04d69085b4183476a71597aa35716cd02791"
         },
         "pipfile-spec": 6,
         "requires": {},
@@ -593,7 +593,7 @@
                 "sha256:481caa481374e813c1b176ada14e97f1f67a4539ce9cfeb3f350d78d6370c2e8",
                 "sha256:dc983d19a509c94dba722ee6abd33940f7c05a89e243c47e907eb4db6f1a43e5"
             ],
-            "markers": "python_version >= '3.9'",
+            "markers": "python_version < '3.13'",
             "version": "==4.16.0"
         },
         "yarl": {
@@ -859,6 +859,15 @@
             "markers": "python_version >= '3.9'",
             "version": "==0.0.5"
         },
+        "anyio": {
+            "hashes": [
+                "sha256:9f505dda5ac9f0c8309b5e8bd445a8c2bf7246f3ce950121e45ea15bc41d1494",
+                "sha256:cfa139f3ed1a23ee8f88a145ddb5ac7605b8bbfd8592baacd7ce3d8bb4313c7f"
+            ],
+            "index": "pypi",
+            "markers": "python_version >= '3.10'",
+            "version": "==4.14.2"
+        },
         "attrs": {
             "hashes": [
                 "sha256:c647aa4a12dfbad9333ca4e71fe62ddc36f4e63b2d260a37a8b83d2f043ac309",
@@ -978,7 +987,7 @@
                 "sha256:fb62edb5bb52cca65fab91a63afa7561607120d26090a7e8fda6fb9f064726da",
                 "sha256:ff067a8d8d880e7809e4ac88eb009bb848870115317b306666502ccad30b147f"
             ],
-            "markers": "python_version >= '3.10'",
+            "markers": "platform_python_implementation != 'PyPy'",
             "version": "==2.1.0"
         },
         "charset-normalizer": {
@@ -1439,7 +1448,7 @@
                 "sha256:97e5714520c16fc0a45695e5365a2e11b81ea79bba796e26f9f1d178cb182683",
                 "sha256:cf0e9e845622b81e4a28df94c40345400256ec608d0e55bb8a3feaa9163f5732"
             ],
-            "markers": "python_version >= '3.7'",
+            "markers": "sys_platform == 'linux'",
             "version": "==0.9.0"
         },
         "keyring": {
@@ -1447,7 +1456,7 @@
                 "sha256:be4a0b195f149690c166e850609a477c532ddbfbaed96a404d4e43f8d5e2689f",
                 "sha256:fe01bd85eb3f8fb3dd0405defdeac9a5b4f6f0439edbb3149577f244a2e8245b"
             ],
-            "markers": "python_version >= '3.9'",
+            "markers": "platform_machine != 'ppc64le' and platform_machine != 's390x'",
             "version": "==25.7.0"
         },
         "markdown-it-py": {
@@ -1807,7 +1816,7 @@
                 "sha256:600f49d217304a5902ac3c37e1281c9fe94e4d0489de643a9504c5cdfdfc6b29",
                 "sha256:b727414169a36b7d524c1c3e31839a521725078d7b2ff038656844266160a992"
             ],
-            "markers": "python_version >= '3.10'",
+            "markers": "implementation_name != 'PyPy'",
             "version": "==3.0"
         },
         "pygments": {
@@ -1899,7 +1908,7 @@
                 "sha256:0ce65888c0725fcb2c5bc0fdb8e5438eece02c523557ea40ce0703c266248137",
                 "sha256:f04b8e4689cbce351744d5537bf6b1329c6fc68f91fa666f60a380edddcd11be"
             ],
-            "markers": "python_version >= '3.10'",
+            "markers": "sys_platform == 'linux'",
             "version": "==3.5.0"
         },
         "setuptools": {
@@ -1941,7 +1950,7 @@
                 "sha256:481caa481374e813c1b176ada14e97f1f67a4539ce9cfeb3f350d78d6370c2e8",
                 "sha256:dc983d19a509c94dba722ee6abd33940f7c05a89e243c47e907eb4db6f1a43e5"
             ],
-            "markers": "python_version >= '3.9'",
+            "markers": "python_version < '3.13'",
             "version": "==4.16.0"
         },
         "urllib3": {
