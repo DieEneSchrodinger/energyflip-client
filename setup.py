@@ -4,14 +4,14 @@ with open("README.md", "r") as fh:
     long_description = fh.read()
 
 setuptools.setup(
-    name="energyflip-api-client",
+    name="energyflip-client",
     version="0.3.0",
-    author="Cat-Basement",
-    author_email="pypi@cat-basement.schoevaars.eu",
-    description="Client for EnergyFlip API",
+    author="Dennis Schroer",
+    author_email="dev@dennisschroer.nl",
+    description="Client for EnergyFlip",
     long_description=long_description,
     long_description_content_type="text/markdown",
-    url="https://github.com/DieEneSchrodinger/energyflip-client",
+    url="https://github.com/dennisschroer/energyflip-client",
     packages=setuptools.find_packages(),
     classifiers=[
         "Intended Audience :: Developers",
