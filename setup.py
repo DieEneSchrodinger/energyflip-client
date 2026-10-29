@@ -13,6 +13,7 @@ setuptools.setup(
     long_description_content_type="text/markdown",
     url="https://github.com/DieEneSchrodinger/energyflip-client",
     packages=setuptools.find_packages(),
+    install_requires=["aiohttp"],
     classifiers=[
         "Intended Audience :: Developers",
         "License :: OSI Approved :: Apache Software License",
